@@ -54,7 +54,8 @@ namespace Task2
                                 result = oper.Operation(numOne, numTwo);
                             }
                             break;
-
+                        default:
+                            throw new MyException("Некорректно введеная операция");
                     }
                     string a = Convert.ToString(result);
                     Logger.Evetnt(a);
@@ -78,14 +79,18 @@ namespace Task2
                     Logger.Error("На ноль делить нельзя!!");
                     Logger.Error(dbze.Message);
                 }
+                catch (MyException me)
+                {
+                    Logger.Error(me.Message);
+                }
                 catch (Exception e)
                 {
                     Logger.Error(e.Message);
                 }
                 finally
                 {
-                    Console.WriteLine("Хотите выйти из программы Да/Нет (Y/N)");
-                    if (Console.ReadKey(true).Key == ConsoleKey.Y)
+                    Console.WriteLine("для выхода из программы нажмите N");
+                    if (Console.ReadKey(true).Key == ConsoleKey.N)
                     {
                         Environment.Exit(0);
                     }
