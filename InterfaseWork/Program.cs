@@ -10,14 +10,14 @@ namespace InterfaceTask1
         {
             try
             {
-                Console.Write("введите число для первре слозения: ");
+                Console.Write("введите число для первре сложения: ");
                 int nunOne = Convert.ToInt32(Console.ReadLine());
-                Console.Write("введите число для второе слозения: ");
+                Console.Write("введите число для второе сложения: ");
                 int nunTwo = Convert.ToInt32(Console.ReadLine());
                 
 
                 Sumator sumTwoNum = new Sumator();
-                Console.WriteLine(sumTwoNum.Sum( nunOne, nunTwo));
+                Console.WriteLine("Сумма чисел: " + sumTwoNum.Sum( nunOne, nunTwo));
 
             }
             catch(Exception e)
